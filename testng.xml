@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Selenium Test Suite" parallel="tests" thread-count="3">
+    <test name="Login Tests">
+        <classes>
+            <class name="com.example.tests.LoginTest"/>
+        </classes>
+    </test>
+    
+    <test name="Checkbox Tests">
+        <classes>
+            <class name="com.example.tests.CheckboxTest"/>
+        </classes>
+    </test>
+    
+    <test name="Dropdown Tests">
+        <classes>
+            <class name="com.example.tests.DropdownTest"/>
+        </classes>
+    </test>
+</suite>

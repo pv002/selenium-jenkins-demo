@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-10-30T16:01:30 EET" name="Selenium Test Suite" finished-at="2025-10-30T16:01:41 EET" duration-ms="10952">
+    <groups>
+    </groups>
+    <test started-at="2025-10-30T16:01:30 EET" name="Checkbox Tests" finished-at="2025-10-30T16:01:36 EET" duration-ms="5777">
+      <class name="com.example.tests.CheckboxTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.CheckboxTest@dd05255]" started-at="2025-10-30T16:01:30 EET" name="setUp" finished-at="2025-10-30T16:01:35 EET" duration-ms="5094" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCheckboxes()[pri:0, instance:com.example.tests.CheckboxTest@dd05255]" started-at="2025-10-30T16:01:35 EET" name="testCheckboxes" finished-at="2025-10-30T16:01:36 EET" duration-ms="498" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCheckboxes -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.CheckboxTest@dd05255]" started-at="2025-10-30T16:01:36 EET" name="tearDown" finished-at="2025-10-30T16:01:36 EET" duration-ms="151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.CheckboxTest -->
+    </test> <!-- Checkbox Tests -->
+    <test started-at="2025-10-30T16:01:30 EET" name="Dropdown Tests" finished-at="2025-10-30T16:01:36 EET" duration-ms="5777">
+      <class name="com.example.tests.DropdownTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.DropdownTest@10683d9d]" started-at="2025-10-30T16:01:30 EET" name="setUp" finished-at="2025-10-30T16:01:34 EET" duration-ms="3424" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testDropdownSelection()[pri:0, instance:com.example.tests.DropdownTest@10683d9d]" started-at="2025-10-30T16:01:34 EET" name="testDropdownSelection" finished-at="2025-10-30T16:01:36 EET" duration-ms="2195" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDropdownSelection -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.DropdownTest@10683d9d]" started-at="2025-10-30T16:01:36 EET" name="tearDown" finished-at="2025-10-30T16:01:36 EET" duration-ms="124" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.DropdownTest -->
+    </test> <!-- Dropdown Tests -->
+    <test started-at="2025-10-30T16:01:30 EET" name="Login Tests" finished-at="2025-10-30T16:01:41 EET" duration-ms="10952">
+      <class name="com.example.tests.LoginTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.LoginTest@35e2d654]" started-at="2025-10-30T16:01:30 EET" name="setUp" finished-at="2025-10-30T16:01:35 EET" duration-ms="5188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testFailedLogin()[pri:0, instance:com.example.tests.LoginTest@35e2d654]" started-at="2025-10-30T16:01:35 EET" name="testFailedLogin" finished-at="2025-10-30T16:01:36 EET" duration-ms="1135" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFailedLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.LoginTest@35e2d654]" started-at="2025-10-30T16:01:36 EET" name="tearDown" finished-at="2025-10-30T16:01:37 EET" duration-ms="136" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.tests.LoginTest@35e2d654]" started-at="2025-10-30T16:01:37 EET" name="setUp" finished-at="2025-10-30T16:01:40 EET" duration-ms="3154" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testSuccessfulLogin()[pri:0, instance:com.example.tests.LoginTest@35e2d654]" started-at="2025-10-30T16:01:40 EET" name="testSuccessfulLogin" finished-at="2025-10-30T16:01:41 EET" duration-ms="1181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSuccessfulLogin -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.example.tests.LoginTest@35e2d654]" started-at="2025-10-30T16:01:41 EET" name="tearDown" finished-at="2025-10-30T16:01:41 EET" duration-ms="123" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.LoginTest -->
+    </test> <!-- Login Tests -->
+  </suite> <!-- Selenium Test Suite -->
+</testng-results>
