@@ -15,10 +15,10 @@ pipeline {
             }
         }
         
-        stage('Build') {
+        stage('Build and Compile Tests') {
             steps {
-                echo 'Building project with Maven...'
-                bat 'mvn clean compile'
+                echo 'Building project and compiling tests with Maven...'
+                bat 'mvn clean compile test-compile'
             }
         }
         
