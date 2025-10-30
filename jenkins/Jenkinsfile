@@ -18,14 +18,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building project with Maven...'
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
         
         stage('Test') {
             steps {
                 echo 'Running Selenium Tests...'
-                sh 'mvn surefire:test -DsuiteXmlFile=testng.xml'
+                bat 'mvn surefire:test -DsuiteXmlFile=testng.xml'
             }
             post {
                 always {
@@ -42,13 +42,6 @@ pipeline {
                 }
             }
         }
-        
-        stage('Archive') {
-            steps {
-                echo 'Archiving test results...'
-                archiveArtifacts artifacts: 'target/surefire-reports/**/*', fingerprint: true
-            }
-        }
     }
     
     post {
@@ -57,15 +50,9 @@ pipeline {
         }
         success {
             echo '🎉 All tests passed successfully!'
-            mail to: 'user@example.com',
-                 subject: "Pipeline Successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                 body: "The build ${env.BUILD_URL} completed successfully."
         }
         failure {
             echo '❌ Pipeline failed!'
-            mail to: 'user@example.com',
-                 subject: "Pipeline Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                 body: "The build ${env.BUILD_URL} failed. Please check the logs."
         }
     }
 }
