@@ -1,0 +1,71 @@
+pipeline {
+    agent any
+    
+    tools {
+        maven 'M3'
+        jdk 'JDK11'
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Checking out source code from GitHub...'
+                git branch: 'main',
+                url: 'https://github.com/pv002/selenium-jenkins-demo.git'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                echo 'Building project with Maven...'
+                sh 'mvn clean compile'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                echo 'Running Selenium Tests...'
+                sh 'mvn surefire:test -DsuiteXmlFile=testng.xml'
+            }
+            post {
+                always {
+                    echo 'Publishing test results...'
+                    junit 'target/surefire-reports/*.xml'
+                    publishHTML([
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'target/surefire-reports',
+                        reportFiles: 'emailable-report.html',
+                        reportName: 'TestNG Report'
+                    ])
+                }
+            }
+        }
+        
+        stage('Archive') {
+            steps {
+                echo 'Archiving test results...'
+                archiveArtifacts artifacts: 'target/surefire-reports/**/*', fingerprint: true
+            }
+        }
+    }
+    
+    post {
+        always {
+            echo "Pipeline completed - Result: ${currentBuild.currentResult}"
+        }
+        success {
+            echo '🎉 All tests passed successfully!'
+            mail to: 'user@example.com',
+                 subject: "Pipeline Successful: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "The build ${env.BUILD_URL} completed successfully."
+        }
+        failure {
+            echo '❌ Pipeline failed!'
+            mail to: 'user@example.com',
+                 subject: "Pipeline Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "The build ${env.BUILD_URL} failed. Please check the logs."
+        }
+    }
+}
